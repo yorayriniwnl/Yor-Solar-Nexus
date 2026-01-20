@@ -3,26 +3,44 @@ import { Link } from "react-router-dom";
 function Feasibility() {
   return (
     <div style={{ padding: "40px", maxWidth: "700px", margin: "auto" }}>
-      <h1>Location-Based Feasibility Check</h1>
+      <h1>Location & Energy Usage Input</h1>
 
       <p>
-        Enter your location below. The system will internally analyze the
-        smallest possible unit (area / zone) to evaluate solar feasibility.
+        Enter your location and upload a recent electricity bill.
+        The system will internally analyze the smallest geographic unit
+        and energy usage pattern.
       </p>
 
+      {/* Location Input */}
       <label>
         <strong>Location</strong>
         <br />
         <input
           type="text"
-          placeholder="Enter city, area, or PIN code"
-          style={{ width: "100%", padding: "10px", marginTop: "8px" }}
+          placeholder="City / Area / PIN code"
+          style={{
+            width: "100%",
+            padding: "10px",
+            marginTop: "8px",
+            marginBottom: "20px",
+          }}
         />
       </label>
 
-      <p style={{ marginTop: "12px", fontSize: "14px", color: "#555" }}>
-        * Detailed environmental and rooftop factors will be considered
-        internally by the system.
+      {/* Electricity Bill Upload */}
+      <label>
+        <strong>Upload Electricity Bill (Image)</strong>
+        <br />
+        <input
+          type="file"
+          accept="image/*"
+          style={{ marginTop: "8px" }}
+        />
+      </label>
+
+      <p style={{ fontSize: "14px", color: "#555", marginTop: "8px" }}>
+        * The bill is used to estimate energy consumption. No manual
+        calculations are required from the user.
       </p>
 
       <br />
